@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
             default: break;
         }
         setUnitText();
+        setValueEditHint();
         convert();
     }
 
@@ -90,6 +91,14 @@ public class MainActivity extends AppCompatActivity {
         switch (unitType) {
             case UNIT_TYPE_METER_TO_FOOT: getUnitText().setText("feet"); break;
             case UNIT_TYPE_FOOT_TO_METER: getUnitText().setText("meters"); break;
+            default: break;
+        }
+    }
+
+    private void setValueEditHint() {
+        switch (unitType) {
+            case UNIT_TYPE_METER_TO_FOOT: getValueEdit().setHint("Meters (m)"); break;
+            case UNIT_TYPE_FOOT_TO_METER: getValueEdit().setHint("Feet (ft)"); break;
             default: break;
         }
     }
